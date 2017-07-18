@@ -67,7 +67,7 @@ while true
                  psucc
                 ;;
             f|F) echo "Editing Command.php..."
-                 EROP=$(sed -i 's/string $label/label/g' PocketMine-MP/src/pocketmine/command/CommandExecutor.php 2>&1)
+                 EROP=$(sed -i 's/string $label/$label/g' PocketMine-MP/src/pocketmine/command/CommandExecutor.php 2>&1)
                  psucc
                 ;;
             x|X) echo -e "${RED}Bye, bye!${NF}"
