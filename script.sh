@@ -31,6 +31,7 @@ while true
         echo 'c) Enable MCPE 1.1 lighting bug fixer (see https://forums.pmmp.io/posts/26920), this will edit the default pocketmine.yml too!'
         echo 'd) Build phar (TODO)'
         echo 'e) Delete the PocketMine-MP folder from this directory (use this to prevent errors when cloning again)'
+        echo 'f) Fix plugin commands'
         echo 'x) Exit Script'
         if [ "$SUCC" == "yes" ]
           then
@@ -63,6 +64,10 @@ while true
                 ;;
             e|E) echo "Deleting PocketMine-MP folder..."
                  rm -rf PocketMine-MP/
+                 psucc
+                ;;
+            f|F) echo "Editing Command.php..."
+                 EROP=$(sed -i 's/string $label/$label/g' PocketMine-MP/src/pocketmine/command/CommandExecutor.php 2>&1)
                  psucc
                 ;;
             x|X) echo -e "${RED}Bye, bye!${NF}"
